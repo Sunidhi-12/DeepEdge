@@ -5,7 +5,7 @@
 
 
 import numpy as np
-
+# Dataset generation using random integer
 def dataset_generation():
     image = np.zeros((50, 50))
     x = np.random.randint(0, 50)
@@ -18,6 +18,7 @@ def main():
     total_samples = 2500
     images = []
     labels = []
+    # Making sure that dataset contains all unique samples
     unique_samples = set()
 
     while len(images) < total_samples:
@@ -29,6 +30,7 @@ def main():
 
     images = np.array(images)
     labels = np.array(labels)
+    # Saving the dataset
     np.savez("dataset.npz", images=images, labels=labels)
 
 if __name__ == "__main__":
